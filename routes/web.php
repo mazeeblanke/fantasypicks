@@ -16,3 +16,14 @@ Route::get('/', 'PagesController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('matches', 'MatchController');
+
+// Administrator
+Route::group(['middleware' => 'role:administrator'], function ()
+{
+    Route::get('admin', function ()
+    {
+
+    });
+});

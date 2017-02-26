@@ -11,8 +11,19 @@
     </div>
     <div class="languages">
         <ul class="list-inline">
-            <li class="active"><a href="#">EN</a></li>
-            <li class=""><a href="#" class="btn btn-2 btn-primary btn-main">Feedback</a></li>
+            @if (Auth::check())
+                {!! Form::open(['route' => 'logout', 'id' => 'logout']) !!}{!! Form::close() !!}
+                <li class="active"><a href="#" onclick="$('#logout').submit()">Logout</a></li>
+
+                @role('administrator')
+                <li class="active"><a href="{{ url('admin') }}">Admin</a></li>
+                @endrole
+            @else
+                <li class="active"><a href="{{ route('login') }}">Login</a></li>
+                <li class="active"><a href="{{ route('register') }}">Register</a></li>
+            @endif
+
+            <li><a href="#" class="btn btn-2 btn-primary btn-main">Feedback</a></li>
         </ul>
     </div>
 </div> <!-- //end main-nav -->
@@ -35,7 +46,8 @@
         </li>
         <li>
             <a href="{{ url('/') }}">
-                matches <span class="info animated fadeInRight">we are fantasy picks, see what matches you can bet on.</span>
+                matches <span
+                        class="info animated fadeInRight">we are fantasy picks, see what matches you can bet on.</span>
             </a>
         </li>
     </ul>

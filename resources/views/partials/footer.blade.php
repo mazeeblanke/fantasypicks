@@ -18,19 +18,19 @@
                             <div class="item active wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                                 <p class="info">Check out recent winnings on #FantasyPicksWIN</p>
                                 <p class="link"> by <span>@FantasyPicks</span><a href="#"> #FantasyPicksWIN
-                                                                                      http://tllg.net/8szMvf5t</a>
+                                                                                           http://tllg.net/8szMvf5t</a>
                                 </p>
                             </div>
                             <div class="item">
                                 <p class="info">Check out popular games on #FantasyPicksWIN</p>
                                 <p class="link"> by <span>@FantasyPicks</span><a href="#"> #FantasyPicksWIN
-                                                                                      http://tllg.net/8szMvf5t</a>
+                                                                                           http://tllg.net/8szMvf5t</a>
                                 </p>
                             </div>
                             <div class="item">
                                 <p class="info">Check out reviews on #FantasyPicksWIN</p>
                                 <p class="link"> by <span>@FantasyPicks</span><a href="#"> #FantasyPicksWIN
-                                                                                      http://tllg.net/8szMvf5t</a>
+                                                                                           http://tllg.net/8szMvf5t</a>
                                 </p>
                             </div>
                         </div>
@@ -52,11 +52,15 @@
                                                       alt="Fantay Picks Logo"></p>
                     <ul class="nav-footer list-inline mtb30">
                         <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+
+                        @if(Auth::check())
+                            <li><a href="{{ route('logout') }}" onclick="$('#logout').submit()">Logout</a></li>
+                        @else
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endif
+
+                        <li><a href="{{ route('matches.index') }}">Matches</a></li>
                     </ul>
                     <ul class="social-icon-footer list-inline">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>

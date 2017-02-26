@@ -118,7 +118,7 @@
                     <div class="counter-content">
                         <div class="col-sm-4 each-counter wow zoomIn">
                             <p class="icon">
-                                <img src="{{ asset('img/icon/clients.png') }}" alt="img">
+                                <span class="fa fa-5x fa-users"></span>
                             </p>
                             <span class="counter count1">8637</span>
                             <p class="title">Clients</p>
@@ -128,22 +128,22 @@
                         </div>
                         <div class="col-sm-4 each-counter wow zoomIn">
                             <p class="icon">
-                                <img src="{{ asset('img/icon/projects.png') }}" alt="img">
+                                <span class="fa fa-5x fa-globe"></span>
                             </p>
                             <span class="counter count2">82698</span>
-                            <p class="title">BETS MADE</p>
+                            <p class="title">PREDICTIONS MADE</p>
                             <p class="info">
                                 We're growing faster than ever before!
                             </p>
                         </div>
                         <div class="col-sm-4 each-counter wow zoomIn">
                             <p class="icon">
-                                <img src="{{ asset('img/icon/deliveries.png') }}" alt="img">
+                                <span class="fa fa-5x fa-trophy"></span>
                             </p>
-                            <span class="counter count3">230362</span>
-                            <p class="title">SOUTH AFRICAN RAND</p>
+                            <span class="counter count3">46235</span>
+                            <p class="title">CORRECT PREDICTIONS</p>
                             <p class="info">
-                                Won in prizes!
+                                They know what they're talking about!
                             </p>
                         </div>
                     </div>

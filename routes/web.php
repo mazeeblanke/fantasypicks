@@ -20,10 +20,12 @@ Route::get('/home', 'HomeController@index');
 Route::resource('matches', 'MatchController');
 
 // Administrator
-Route::group(['middleware' => 'role:administrator'], function ()
+Route::group(['middleware' => 'role:administrator', 'prefix' => 'admin'], function ()
 {
-    Route::get('admin', function ()
+    Route::get('/', function ()
     {
-
+        return view('admin.index');
     });
+
+    Route::post('tournaments', 'admin\TournamentController@set')->name('admin.tournaments.set');
 });

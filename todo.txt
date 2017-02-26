@@ -1,0 +1,46 @@
+.Set tournament to work on
+    - Get tournament and save in database.
+    - Get current season and save in database.
+        - Get all matches in season and add in database.
+        - Get teams playing in season and save in database
+        - Get previous match results
+        - Get team standings
+
+.Show all games to predict on
+    - With probabilities
+    - and match information
+        - can even add a fun fact of the match ;)
+
+.Figure out how to handle post-match updates
+    - Users' stats
+    - Past match statistics
+    - Correct prediction statistics
+    - Set up a minified profile; perhaps use graphs :)
+
+.Have users bet and predict who will win each game
+
+.Show user count on homepage
+.Show bet count on homepage
+.Show amount of users who predicted correctly on homepage
+
+.Set up feedback button
+
+Picked up models:
+Tournament
+Season
+Teams
+Match
+User
+Bet
+
+A {
+
+}
+
+B {
+
+}
+
+C {
+
+}

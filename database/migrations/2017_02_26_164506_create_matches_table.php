@@ -21,10 +21,13 @@ class CreateMatchesTable extends Migration
             $table->string('sportsradar_id', 100);
             $table->dateTime('scheduled');
             $table->string('status', 100);
-            $table->integer('tournament_round');
 
             $table->string('home_team_id');
             $table->string('away_team_id');
+
+            $table->float('probability_home_win')->nullable();
+            $table->float('probability_away_win')->nullable();
+            $table->float('probability_draw')->nullable();
 
             $table->timestamps();
 

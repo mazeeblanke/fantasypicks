@@ -59,7 +59,7 @@
 <div id="wrapper">
 
     @include('partials.header')
-
+    @include('partials.flash_messages')
     @yield('content')
 
     @include('partials.footer')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Match;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,9 @@ class MatchController extends Controller
      */
     public function index(Client $client)
     {
-        $response = $client->get('https://api.sportradar.us/soccer-t3/eu/en/tournaments/sr:tournament:17/info.json?api_key=guz9ggyn44dqdq3tj8vj6xa5');
+        $matches = Match::where('status', 'not_started')->get();
 
-        dd(json_decode($response->getBody(), true));
-
-        return view('matches.index');
+        return view('matches.index', compact('matches'));
     }
 
     /**

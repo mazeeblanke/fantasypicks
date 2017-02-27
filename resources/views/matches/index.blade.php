@@ -23,110 +23,36 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
+                    @foreach($matches as $match)
                         <!-- article 01 -->
-                        <article class="article-01 wow fadeIn">
-                            <div class="row-same-height row-full-height">
-                                <div class="post-info col-sm-3 col-xs-height col-full-height">
-                                    <p class="date">Jan, 2015</p>
-                                    <p class="post-number">17</p>
-                                </div>
-                                <div class="col-sm-9 col-xs-height col-full-height">
-                                    <div class="details">
-                                        <h4><a href="#">Duis eget ultricies lorem, et rhoncus
-                                                                        augue. </a></h4>
-                                        <ul class="entry-meta list-inline">
-                                            <li>By <a href="#">Wisten Wings</a></li>
-                                            <li>Art, Creative</li>
-                                            <li>Comments 9</li>
-                                        </ul>
+                            <article class="article-01 wow fadeIn">
+                                <div class="row-same-height row-full-height">
+                                    <div class="post-info col-sm-3 col-xs-height col-full-height">
+                                        <p class="date">{{ $match->scheduled->format('M, Y') }}</p>
+                                        <p class="post-number">{{ $match->scheduled->format('j') }}</p>
+                                    </div>
+                                    <div class="col-sm-9 col-xs-height col-full-height">
+                                        <div class="details">
+                                            <h4>
+                                                <span class="text-success">{{ $match->home_team->name }}</span> VS <span
+                                                        class="text-danger">{{ $match->away_team->name }}</span>
+                                            </h4>
+                                            <ul class="entry-meta list-inline">
+                                                @if($match->probability_home_win)
+                                                    <li>Home win chance: {{$match->probability_home_win}}%</li>
+                                                @endif
+                                                @if($match->probability_away_win)
+                                                    <li>Away win chance: {{$match->probability_away_win}}%</li>
+                                                @endif
+                                                @if($match->probability_draw)
+                                                    <li>Draw chance: {{$match->probability_draw}}%</li>
+                                                @endif
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article> <!-- //article 01 -->
-
-                        <!-- article 02 -->
-                        <article class="article-02 wow fadeIn">
-                            <div class="row-same-height row-full-height">
-                                <div class="post-info col-sm-3 col-xs-height col-full-height">
-                                    <p class="date">Jan, 2015</p>
-                                    <p class="post-number">15</p>
-                                </div>
-                                <div class="col-sm-9 col-xs-height col-full-height">
-                                    <div class="details">
-                                        <h4><a href="#">Duis eget ultricies lorem, et rhoncus
-                                                                        augue. </a></h4>
-                                        <ul class="entry-meta list-inline">
-                                            <li>By <a href="#">Wisten Wings</a></li>
-                                            <li>Art, Creative</li>
-                                            <li>Comments 9</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article> <!-- //article 02 -->
-
-                        <!-- article 03 -->
-                        <article class="article-03 wow fadeIn">
-                            <div class="row-same-height row-full-height">
-                                <div class="post-info col-sm-3 col-xs-height col-full-height">
-                                    <p class="date">Jan, 2015</p>
-                                    <p class="post-number">13</p>
-                                </div>
-                                <div class="col-sm-9 col-xs-height col-full-height">
-                                    <div class="details">
-                                        <h4><a href="#">Duis eget ultricies lorem, et rhoncus
-                                                                        augue. </a></h4>
-                                        <ul class="entry-meta list-inline">
-                                            <li>By <a href="#">Wisten Wings</a></li>
-                                            <li>Art, Creative</li>
-                                            <li>Comments 9</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article> <!-- //article 03 -->
-
-                        <!-- article 04 -->
-                        <article class="article-04 wow fadeIn">
-                            <div class="row-same-height row-full-height">
-                                <div class="post-info col-sm-3 col-xs-height col-full-height">
-                                    <p class="date">Jan, 2015</p>
-                                    <p class="post-number">12</p>
-                                </div>
-                                <div class="col-sm-9 col-xs-height col-full-height">
-                                    <div class="details">
-                                        <h4><a href="#">Duis eget ultricies lorem, et rhoncus
-                                                                        augue. </a></h4>
-                                        <ul class="entry-meta list-inline">
-                                            <li>By <a href="#">Wisten Wings</a></li>
-                                            <li>Art, Creative</li>
-                                            <li>Comments 9</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article> <!-- //article 04 -->
-
-                        <!-- article 05 -->
-                        <article class="article-05 wow fadeIn">
-                            <div class="row-same-height row-full-height">
-                                <div class="post-info col-sm-3 col-xs-height col-full-height">
-                                    <p class="date">Jan, 2015</p>
-                                    <p class="post-number">07</p>
-                                </div>
-                                <div class="col-sm-9 col-xs-height col-full-height">
-                                    <div class="details">
-                                        <h4><a href="#">Duis eget ultricies lorem, et rhoncus
-                                                                        augue. </a></h4>
-                                        <ul class="entry-meta list-inline">
-                                            <li>By <a href="#">Wisten Wings</a></li>
-                                            <li>Art, Creative</li>
-                                            <li>Comments 9</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article> <!-- //article 05 -->
+                            </article> <!-- //article 01 -->
+                        @endforeach
                     </div>
                 </div> <!-- //row -->
             </div> <!-- //container -->

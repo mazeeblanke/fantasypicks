@@ -19,7 +19,7 @@ class CreateMatchesTable extends Migration
             $table->integer('season_id')->unsigned();
 
             $table->string('sportsradar_id', 100);
-            $table->dateTime('scheduled');
+            $table->timestamp('scheduled');
             $table->string('status', 100);
 
             $table->string('home_team_id');

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model {
 
+    protected $dates = [
+        'scheduled'
+    ];
+
     protected $fillable = [
         'season_id',
         'sportsradar_id',
@@ -15,4 +19,14 @@ class Match extends Model {
         'home_team_id',
         'away_team_id'
     ];
+
+    public function home_team ()
+    {
+        return $this->belongsTo(Team::class, 'home_team_id', 'sportsradar_id');
+    }
+
+    public function away_team ()
+    {
+        return $this->belongsTo(Team::class, 'away_team_id', 'sportsradar_id');
+    }
 }
